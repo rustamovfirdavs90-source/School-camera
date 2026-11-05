@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maktab Kameralari Monitoring Sistemi</title>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .camera-card {
+            background-color: #1e293b;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .camera-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Maktab Kameralari Tizimi</h1>
+
+    <div class="grid-container">
+        <!-- 1-Kamera -->
+        <div class="camera-card">
+            <div class="camera-title">1-Maktab (Asosiy kirish)</div>
+            <video id="cam1" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay muted width="100%" height="200">
+                <source src="https://YOUR_STREAM_SERVER/hls/stream1.m3u8" type="application/x-mpegURL">
+            </video>
+        </div>
+
+        <!-- 2-Kamera -->
+        <div class="camera-card">
+            <div class="camera-title">2-Maktab (Koridor)</div>
+            <video id="cam2" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay muted width="100%" height="200">
+                <source src="https://YOUR_STREAM_SERVER/hls/stream2.m3u8" type="application/x-mpegURL">
+            </video>
+        </div>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+</body>
+</html>
